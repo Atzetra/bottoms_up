@@ -1,5 +1,5 @@
 import 'dart:ui';
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
+import 'package:bottoms_up/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 /// A class that offers pre-defined button styles for customizing button appearance.

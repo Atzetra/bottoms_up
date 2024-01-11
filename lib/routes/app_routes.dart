@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/home_screen/home_screen.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/one_screen/one_screen.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/add_names_screen/add_names_screen.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/select_deck_screen/select_deck_screen.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/app_navigation_screen/app_navigation_screen.dart';
+import 'package:bottoms_up/presentation/home_screen/home_screen.dart';
+import 'package:bottoms_up/presentation/one_screen/one_screen.dart';
+import 'package:bottoms_up/presentation/add_names_screen/add_names_screen.dart';
+import 'package:bottoms_up/presentation/select_deck_screen/select_deck_screen.dart';
+import 'package:bottoms_up/presentation/app_navigation_screen/app_navigation_screen.dart';
 
 class AppRoutes {
   static const String homeScreen = '/home_screen';

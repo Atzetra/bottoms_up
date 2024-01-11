@@ -1,5 +1,5 @@
 import 'notifier/app_navigation_notifier.dart';
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
+import 'package:bottoms_up/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 class AppNavigationScreen extends ConsumerStatefulWidget {

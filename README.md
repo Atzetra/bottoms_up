@@ -1,4 +1,3 @@
-
 # Bottoms Up!
 ### Table of contents
 - [System requirements](#system-requirements)
