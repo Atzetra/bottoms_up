@@ -27,7 +27,7 @@ class MyApp extends ConsumerWidget {
       builder: (context, orientation, deviceType) {
         return MaterialApp(
           theme: theme,
-          title: 'enzo_sastrokarijo_s_application',
+          title: 'bottoms_up',
           navigatorKey: NavigatorService.navigatorKey,
           debugShowCheckedModeBanner: false,
           localizationsDelegates: [

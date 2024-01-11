@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/app_navigation_screen/models/app_navigation_model.dart';
+import 'package:bottoms_up/presentation/app_navigation_screen/models/app_navigation_model.dart';
 part 'app_navigation_state.dart';
 
 final appNavigationNotifier =

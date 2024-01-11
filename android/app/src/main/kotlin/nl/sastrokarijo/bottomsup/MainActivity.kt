@@ -1,4 +1,4 @@
-package com.enzosastrokarijosapplication.app
+package nl.sastrokarijo.bottomsup
 
 import io.flutter.embedding.android.FlutterActivity
 

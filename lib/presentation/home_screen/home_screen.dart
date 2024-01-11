@@ -1,9 +1,9 @@
 import 'notifier/home_notifier.dart';
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
-import 'package:enzo_sastrokarijo_s_application/widgets/app_bar/appbar_subtitle.dart';
-import 'package:enzo_sastrokarijo_s_application/widgets/app_bar/appbar_trailing_image.dart';
-import 'package:enzo_sastrokarijo_s_application/widgets/app_bar/custom_app_bar.dart';
-import 'package:enzo_sastrokarijo_s_application/widgets/custom_outlined_button.dart';
+import 'package:bottoms_up/core/app_export.dart';
+import 'package:bottoms_up/widgets/app_bar/appbar_subtitle.dart';
+import 'package:bottoms_up/widgets/app_bar/appbar_trailing_image.dart';
+import 'package:bottoms_up/widgets/app_bar/custom_app_bar.dart';
+import 'package:bottoms_up/widgets/custom_outlined_button.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {

@@ -1,5 +1,5 @@
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
-import 'package:enzo_sastrokarijo_s_application/widgets/base_button.dart';
+import 'package:bottoms_up/core/app_export.dart';
+import 'package:bottoms_up/widgets/base_button.dart';
 import 'package:flutter/material.dart';
 
 class CustomElevatedButton extends BaseButton {

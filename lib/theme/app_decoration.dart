@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
+import 'package:bottoms_up/core/app_export.dart';
 
 class AppDecoration {
   // Fill decorations

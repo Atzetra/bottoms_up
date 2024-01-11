@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import '/core/app_export.dart';
-import 'package:enzo_sastrokarijo_s_application/presentation/one_screen/models/one_model.dart';
+import 'package:bottoms_up/presentation/one_screen/models/one_model.dart';
 part 'one_state.dart';
 
 final oneNotifier = StateNotifierProvider<OneNotifier, OneState>(

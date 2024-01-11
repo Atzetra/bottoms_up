@@ -1,4 +1,4 @@
-import 'package:enzo_sastrokarijo_s_application/core/app_export.dart';
+import 'package:bottoms_up/core/app_export.dart';
 import 'package:flutter/material.dart';
 
 class BaseButton extends StatelessWidget {
