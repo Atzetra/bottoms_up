@@ -24,19 +24,19 @@ class GameScreen extends HookConsumerWidget {
     });
 
     final cards = ref.watch(currentCardsProvider);
-    final IndexTracker = ref.watch(indexTrackerProvider);
+    final indexTracker = ref.watch(indexTrackerProvider);
 
     return ColoredScaffold(
       body: InkWell(
         onTap: () {
-          if (IndexTracker > cards.length - 2) {
+          if (indexTracker > cards.length - 2) {
             context.goNamed(AppRoute.endScreen.name);
           } else {
             ref.read(indexTrackerProvider.notifier).increment();
           }
         },
         onLongPress: () {
-          if (IndexTracker == 0) {
+          if (indexTracker == 0) {
             ScaffoldMessenger.of(context).showSnackBar(
               const SnackBar(
                 content: Text('Can\'t go back any further'),
@@ -50,7 +50,7 @@ class GameScreen extends HookConsumerWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             const GameAppBar(),
-            Expanded(child: parseCard(cards[IndexTracker]))
+            Expanded(child: parseCard(cards[indexTracker]))
           ],
         ),
       ),
