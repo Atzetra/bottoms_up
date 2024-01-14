@@ -1,3 +1,5 @@
+import 'package:bottoms_up/src/features/game/view/end_screen.dart';
+import 'package:bottoms_up/src/features/game/view/game_screen.dart';
 import 'package:bottoms_up/src/features/game_selection/view/game_selection.dart';
 import 'package:bottoms_up/src/features/player_selection/view/player_entry.dart';
 import 'package:bottoms_up/src/features/start/presentation/settings/settings.dart';
@@ -12,6 +14,8 @@ enum AppRoute {
   about,
   playerSelection,
   gameSelection,
+  gameScreen,
+  endScreen,
 }
 
 final goRouter = GoRouter(
@@ -51,6 +55,16 @@ final goRouter = GoRouter(
           builder: (context, state) => const GameSelectionScreen(),
         )
       ],
+    ),
+    GoRoute(
+      path: '/game',
+      name: AppRoute.gameScreen.name,
+      builder: (context, state) => const GameScreen(),
+    ),
+    GoRoute(
+      path: '/end',
+      name: AppRoute.endScreen.name,
+      builder: (context, state) => const EndScreen(),
     ),
   ],
 );

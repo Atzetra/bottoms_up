@@ -1,6 +1,8 @@
 import 'package:bottoms_up/src/common_widgets/home_appbar.dart';
 import 'package:bottoms_up/src/core/exports.dart';
 import 'package:bottoms_up/src/router/app_routing.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -13,6 +15,11 @@ class HomeScreen extends HookConsumerWidget {
   const HomeScreen({super.key});
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    useEffect(() {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+      ]);
+    });
     return ColoredScaffold(
       body: Column(
         children: [
