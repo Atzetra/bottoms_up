@@ -2,7 +2,6 @@ import 'package:bottoms_up/src/common_widgets/home_appbar.dart';
 import 'package:bottoms_up/src/common_widgets/info_square.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:bottoms_up/src/core/exports.dart';
 import 'package:bottoms_up/src/theming/thema_data.dart' as theme;
 
 class GameSelectionScreen extends ConsumerWidget {

@@ -7,7 +7,7 @@ part of 'player_repository.dart';
 // **************************************************************************
 
 String _$fakePlayerRepositoryHash() =>
-    r'049accd0da1a06d682c7cbae7dd429e9852e8b10';
+    r'3fddb52f17852d7c4406b6c63f78b50f5b32528b';
 
 /// See also [FakePlayerRepository].
 @ProviderFor(FakePlayerRepository)

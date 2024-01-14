@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bottoms_up/src/common_widgets/header_text.dart';
 import 'package:bottoms_up/src/common_widgets/home_appbar.dart';
 import 'package:bottoms_up/src/core/exports.dart';
