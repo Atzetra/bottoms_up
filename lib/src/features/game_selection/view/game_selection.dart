@@ -103,34 +103,38 @@ class GameTypeCard extends ConsumerWidget {
 
     return Padding(
       padding: const EdgeInsets.all(4),
-      child: Container(
-        width: MediaQuery.of(context).size.width * 0.8,
-        decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            const Text(
-              'Breaking The Ice',
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w800,
-                fontSize: 25,
+      child: GestureDetector(
+        onTap: () =>
+            ref.read(selectedPackProvider.notifier).changeGame(gamePack),
+        child: Container(
+          width: MediaQuery.of(context).size.width * 0.8,
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              const Text(
+                'Breaking The Ice',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w800,
+                  fontSize: 25,
+                ),
               ),
-            ),
-            const SizedBox(
-              width: 10,
-            ),
-            Checkbox(
-              fillColor: MaterialStateProperty.all(Colors.white),
-              value: selectedPack[gamePack.name],
-              onChanged: (_) {
-                ref.read(selectedPackProvider.notifier).changeGame(gamePack);
-              },
-            )
-          ],
+              const SizedBox(
+                width: 10,
+              ),
+              Checkbox(
+                fillColor: MaterialStateProperty.all(Colors.white),
+                value: selectedPack[gamePack.name],
+                onChanged: (_) {
+                  ref.read(selectedPackProvider.notifier).changeGame(gamePack);
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
