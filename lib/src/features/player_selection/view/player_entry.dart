@@ -20,6 +20,7 @@ class PlayerEntry extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final players = ref.watch(fakePlayerRepositoryProvider);
     final scrollController = useScrollController();
+    final controller = useTextEditingController();
 
     WidgetsBinding.instance.addPostFrameCallback((_) {
       scrollController.animateTo(
@@ -68,6 +69,7 @@ class PlayerEntry extends HookConsumerWidget {
                         ),
                         EntryField(
                           scrollController: scrollController,
+                          controller: controller,
                         ),
                         HomeButtonFilled(
                           onTap: () {
@@ -88,6 +90,9 @@ class PlayerEntry extends HookConsumerWidget {
                               );
                               return;
                             }
+                            ref
+                                .read(fakePlayerRepositoryProvider.notifier)
+                                .addPlayer(controller.text);
                             context.pushNamed(AppRoute.gameSelection.name);
                           },
                           color: theme.yellow,
@@ -150,13 +155,16 @@ Widget buildPlayerList(List<Player> players, int index) {
 }
 
 class EntryField extends HookConsumerWidget {
-  const EntryField({super.key, required this.scrollController});
+  const EntryField({
+    super.key,
+    required this.scrollController,
+    required this.controller,
+  });
   final ScrollController scrollController;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = useTextEditingController();
-
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Container(
