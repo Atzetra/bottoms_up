@@ -1,4 +1,3 @@
-import 'package:bottoms_up/src/core/exports.dart';
 import 'package:bottoms_up/src/features/game/domain/gamecard_data.dart';
 import 'package:bottoms_up/src/features/game/domain/k_testcards.dart';
 import 'package:bottoms_up/src/features/game/view/game_card.dart';

@@ -16,6 +16,7 @@ class EndScreen extends HookWidget {
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
       ]);
+      return null;
     });
 
     return ColoredScaffold(

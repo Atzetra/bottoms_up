@@ -19,6 +19,7 @@ class HomeScreen extends HookConsumerWidget {
       SystemChrome.setPreferredOrientations([
         DeviceOrientation.portraitUp,
       ]);
+      return null;
     });
     return ColoredScaffold(
       body: Column(
