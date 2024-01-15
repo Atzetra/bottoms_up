@@ -8,6 +8,7 @@ environment:
   sdk: '>=3.2.3 <4.0.0'
 dependencies:
   appwrite: ^11.0.1
+  envied: ^0.5.3
   flutter:
     sdk: flutter
   flutter_hooks: ^0.20.4
@@ -32,6 +33,7 @@ dev_dependencies:
   riverpod_lint: ^2.3.7
   freezed: ^2.4.6
   json_serializable: ^6.7.1
+  envied_generator: ^0.5.3
 flutter:
   uses-material-design: true
 

@@ -11,6 +11,11 @@
 migrate_working_dir/
 .fvm/
 .*/
+.*
+
+# env files
+.env
+env.g.dart
 
 # IntelliJ related
 *.iml
