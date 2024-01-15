@@ -21,6 +21,7 @@ class GameScreen extends HookConsumerWidget {
       ]);
 
       SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+      return null;
     });
 
     final cards = ref.watch(currentCardsProvider);

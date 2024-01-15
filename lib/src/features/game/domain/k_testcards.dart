@@ -1,8 +1,6 @@
 import 'package:bottoms_up/src/features/game/domain/gamecard_data.dart';
 import 'package:bottoms_up/src/features/game/view/game_card.dart';
 import 'package:bottoms_up/src/features/game_selection/view/game_selection_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 const kTestCards = [
   GameCardData(
