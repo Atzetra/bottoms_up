@@ -88,6 +88,7 @@ class HomeScreen extends HookConsumerWidget {
                       crossAxisCellCount: 5,
                       mainAxisCellCount: 1,
                       child: HomeButtonOutlined(
+                        onTap: () => context.goNamed(AppRoute.sketchpad.name),
                         color: theme.green,
                         child: Row(
                           children: [

@@ -18,7 +18,7 @@ class PlayerEntry extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final players = ref.watch(fakePlayerRepositoryProvider);
+    final players = ref.watch(playerRepositoryProvider);
     final scrollController = useScrollController();
     final controller = useTextEditingController();
 
@@ -90,9 +90,11 @@ class PlayerEntry extends HookConsumerWidget {
                               );
                               return;
                             }
-                            ref
-                                .read(fakePlayerRepositoryProvider.notifier)
-                                .addPlayer(controller.text);
+                            if (controller.text.isNotEmpty) {
+                              ref
+                                  .read(playerRepositoryProvider.notifier)
+                                  .addPlayer(controller.text);
+                            }
                             context.pushNamed(AppRoute.gameSelection.name);
                           },
                           color: theme.yellow,
@@ -214,7 +216,7 @@ class EntryField extends HookConsumerWidget {
               InkWell(
                 onTap: () {
                   if (controller.text.isNotEmpty) {
-                    ref.read(fakePlayerRepositoryProvider.notifier).addPlayer(
+                    ref.read(playerRepositoryProvider.notifier).addPlayer(
                           controller.text,
                         );
                     controller.clear();

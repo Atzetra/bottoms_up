@@ -53,7 +53,7 @@ final goRouter = GoRouter(
           path: 'gameSelection',
           name: AppRoute.gameSelection.name,
           builder: (context, state) => const GameSelectionScreen(),
-        )
+        ),
       ],
     ),
     GoRoute(

@@ -24,13 +24,14 @@ class GameScreen extends HookConsumerWidget {
       return null;
     });
 
-    final cards = ref.watch(currentCardsProvider);
+    final cards = ref.watch(cardsRetrieverProvider);
     final indexTracker = ref.watch(indexTrackerProvider);
 
     return ColoredScaffold(
-      body: InkWell(
+        body: cards.when(
+      data: (data) => InkWell(
         onTap: () {
-          if (indexTracker > cards.length - 2) {
+          if (indexTracker > data.length - 2) {
             context.goNamed(AppRoute.endScreen.name);
           } else {
             ref.read(indexTrackerProvider.notifier).increment();
@@ -51,10 +52,14 @@ class GameScreen extends HookConsumerWidget {
           mainAxisSize: MainAxisSize.max,
           children: [
             const GameAppBar(),
-            Expanded(child: parseCard(cards[indexTracker]))
+            Expanded(child: parseCard(data[indexTracker]))
           ],
         ),
       ),
-    );
+      error: (error, stackTrace) => Center(
+        child: Text(error.toString()),
+      ),
+      loading: () => const CircularProgressIndicator.adaptive(),
+    ));
   }
 }
