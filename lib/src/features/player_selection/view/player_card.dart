@@ -51,7 +51,7 @@ class PlayerCard extends ConsumerWidget {
                   InkWell(
                     onTap: () {
                       ref
-                          .read(fakePlayerRepositoryProvider.notifier)
+                          .read(playerRepositoryProvider.notifier)
                           .removePlayer(player);
                     },
                     child: const Icon(

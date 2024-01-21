@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'game_selection_controller.g.dart';
@@ -5,19 +6,23 @@ part 'game_selection_controller.g.dart';
 @riverpod
 class SelectedPack extends _$SelectedPack {
   @override
-  Map<String, bool> build() {
-    return <String, bool>{
-      GamePack.breakingTheIce.name: true,
-      GamePack.raisingTheStakes.name: false,
-      GamePack.caliente.name: false,
+  Map<GamePack, bool> build() {
+    ref.onDispose(() {
+      debugPrint('disposed');
+    });
+
+    return <GamePack, bool>{
+      GamePack.breakingTheIce: true,
+      GamePack.raisingTheStakes: false,
+      GamePack.caliente: false,
     };
   }
 
   void changeGame(GamePack gamePack) {
-    state = <String, bool>{
-      GamePack.breakingTheIce.name: gamePack == GamePack.breakingTheIce,
-      GamePack.raisingTheStakes.name: gamePack == GamePack.raisingTheStakes,
-      GamePack.caliente.name: gamePack == GamePack.caliente,
+    state = <GamePack, bool>{
+      GamePack.breakingTheIce: gamePack == GamePack.breakingTheIce,
+      GamePack.raisingTheStakes: gamePack == GamePack.raisingTheStakes,
+      GamePack.caliente: gamePack == GamePack.caliente,
     };
   }
 }

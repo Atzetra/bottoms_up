@@ -115,9 +115,9 @@ class GameTypeCard extends ConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              const Text(
-                'Breaking The Ice',
-                style: TextStyle(
+              Text(
+                gamePack.name,
+                style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
                   fontSize: 25,
@@ -128,9 +128,11 @@ class GameTypeCard extends ConsumerWidget {
               ),
               Checkbox(
                 fillColor: MaterialStateProperty.all(Colors.white),
-                value: selectedPack[gamePack.name],
+                value: selectedPack[gamePack],
                 onChanged: (_) {
+                  // debugPrint('Gamepack changed to $gamePack');
                   ref.read(selectedPackProvider.notifier).changeGame(gamePack);
+                  // debugPrint(ref.read(selectedPackProvider).toString());
                 },
               )
             ],

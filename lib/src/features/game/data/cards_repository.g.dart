@@ -6,34 +6,21 @@ part of 'cards_repository.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$currentCardsHash() => r'809c659ec8eb5c52f0ba1e8277b7726ef9d9c70c';
+String _$cardsRetrieverHash() => r'15c0bc28cca2690fd73aed40eb88ff2d51a477c9';
 
-/// See also [currentCards].
-@ProviderFor(currentCards)
-final currentCardsProvider = AutoDisposeProvider<List<GameCardData>>.internal(
-  currentCards,
-  name: r'currentCardsProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$currentCardsHash,
+/// See also [CardsRetriever].
+@ProviderFor(CardsRetriever)
+final cardsRetrieverProvider = AutoDisposeAsyncNotifierProvider<CardsRetriever,
+    List<GameCardData>>.internal(
+  CardsRetriever.new,
+  name: r'cardsRetrieverProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$cardsRetrieverHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef CurrentCardsRef = AutoDisposeProviderRef<List<GameCardData>>;
-String _$gameCardPoolHash() => r'f9003e53497e5ea6d02197250edfc8ee87de8c03';
-
-/// See also [GameCardPool].
-@ProviderFor(GameCardPool)
-final gameCardPoolProvider =
-    AutoDisposeNotifierProvider<GameCardPool, List<GameCard>>.internal(
-  GameCardPool.new,
-  name: r'gameCardPoolProvider',
-  debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$gameCardPoolHash,
-  dependencies: null,
-  allTransitiveDependencies: null,
-);
-
-typedef _$GameCardPool = AutoDisposeNotifier<List<GameCard>>;
+typedef _$CardsRetriever = AutoDisposeAsyncNotifier<List<GameCardData>>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

@@ -14,15 +14,20 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
+GameCardData _$GameCardDataFromJson(Map<String, dynamic> json) {
+  return _GameCardData.fromJson(json);
+}
+
 /// @nodoc
 mixin _$GameCardData {
-  String get id => throw _privateConstructorUsedError;
   CardType get cardType => throw _privateConstructorUsedError;
-  GamePack get pack => throw _privateConstructorUsedError;
-  Map<String, TextWeight> get question => throw _privateConstructorUsedError;
+  GamePack get gamePack => throw _privateConstructorUsedError;
+  String get question => throw _privateConstructorUsedError;
+  String? get followUp => throw _privateConstructorUsedError;
   bool get isDual => throw _privateConstructorUsedError;
   int get playersRequired => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $GameCardDataCopyWith<GameCardData> get copyWith =>
       throw _privateConstructorUsedError;
@@ -35,10 +40,10 @@ abstract class $GameCardDataCopyWith<$Res> {
       _$GameCardDataCopyWithImpl<$Res, GameCardData>;
   @useResult
   $Res call(
-      {String id,
-      CardType cardType,
-      GamePack pack,
-      Map<String, TextWeight> question,
+      {CardType cardType,
+      GamePack gamePack,
+      String question,
+      String? followUp,
       bool isDual,
       int playersRequired});
 }
@@ -56,30 +61,30 @@ class _$GameCardDataCopyWithImpl<$Res, $Val extends GameCardData>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? cardType = null,
-    Object? pack = null,
+    Object? gamePack = null,
     Object? question = null,
+    Object? followUp = freezed,
     Object? isDual = null,
     Object? playersRequired = null,
   }) {
     return _then(_value.copyWith(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       cardType: null == cardType
           ? _value.cardType
           : cardType // ignore: cast_nullable_to_non_nullable
               as CardType,
-      pack: null == pack
-          ? _value.pack
-          : pack // ignore: cast_nullable_to_non_nullable
+      gamePack: null == gamePack
+          ? _value.gamePack
+          : gamePack // ignore: cast_nullable_to_non_nullable
               as GamePack,
       question: null == question
           ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as Map<String, TextWeight>,
+              as String,
+      followUp: freezed == followUp
+          ? _value.followUp
+          : followUp // ignore: cast_nullable_to_non_nullable
+              as String?,
       isDual: null == isDual
           ? _value.isDual
           : isDual // ignore: cast_nullable_to_non_nullable
@@ -101,10 +106,10 @@ abstract class _$$GameCardDataImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String id,
-      CardType cardType,
-      GamePack pack,
-      Map<String, TextWeight> question,
+      {CardType cardType,
+      GamePack gamePack,
+      String question,
+      String? followUp,
       bool isDual,
       int playersRequired});
 }
@@ -120,30 +125,30 @@ class __$$GameCardDataImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = null,
     Object? cardType = null,
-    Object? pack = null,
+    Object? gamePack = null,
     Object? question = null,
+    Object? followUp = freezed,
     Object? isDual = null,
     Object? playersRequired = null,
   }) {
     return _then(_$GameCardDataImpl(
-      id: null == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String,
       cardType: null == cardType
           ? _value.cardType
           : cardType // ignore: cast_nullable_to_non_nullable
               as CardType,
-      pack: null == pack
-          ? _value.pack
-          : pack // ignore: cast_nullable_to_non_nullable
+      gamePack: null == gamePack
+          ? _value.gamePack
+          : gamePack // ignore: cast_nullable_to_non_nullable
               as GamePack,
       question: null == question
-          ? _value._question
+          ? _value.question
           : question // ignore: cast_nullable_to_non_nullable
-              as Map<String, TextWeight>,
+              as String,
+      followUp: freezed == followUp
+          ? _value.followUp
+          : followUp // ignore: cast_nullable_to_non_nullable
+              as String?,
       isDual: null == isDual
           ? _value.isDual
           : isDual // ignore: cast_nullable_to_non_nullable
@@ -157,31 +162,27 @@ class __$$GameCardDataImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$GameCardDataImpl implements _GameCardData {
   const _$GameCardDataImpl(
-      {required this.id,
-      required this.cardType,
-      required this.pack,
-      required final Map<String, TextWeight> question,
+      {required this.cardType,
+      required this.gamePack,
+      required this.question,
+      this.followUp,
       required this.isDual,
-      required this.playersRequired})
-      : _question = question;
+      required this.playersRequired});
 
-  @override
-  final String id;
+  factory _$GameCardDataImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GameCardDataImplFromJson(json);
+
   @override
   final CardType cardType;
   @override
-  final GamePack pack;
-  final Map<String, TextWeight> _question;
+  final GamePack gamePack;
   @override
-  Map<String, TextWeight> get question {
-    if (_question is EqualUnmodifiableMapView) return _question;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableMapView(_question);
-  }
-
+  final String question;
+  @override
+  final String? followUp;
   @override
   final bool isDual;
   @override
@@ -189,7 +190,7 @@ class _$GameCardDataImpl implements _GameCardData {
 
   @override
   String toString() {
-    return 'GameCardData(id: $id, cardType: $cardType, pack: $pack, question: $question, isDual: $isDual, playersRequired: $playersRequired)';
+    return 'GameCardData(cardType: $cardType, gamePack: $gamePack, question: $question, followUp: $followUp, isDual: $isDual, playersRequired: $playersRequired)';
   }
 
   @override
@@ -197,44 +198,58 @@ class _$GameCardDataImpl implements _GameCardData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$GameCardDataImpl &&
-            (identical(other.id, id) || other.id == id) &&
             (identical(other.cardType, cardType) ||
                 other.cardType == cardType) &&
-            (identical(other.pack, pack) || other.pack == pack) &&
-            const DeepCollectionEquality().equals(other._question, _question) &&
+            (identical(other.gamePack, gamePack) ||
+                other.gamePack == gamePack) &&
+            (identical(other.question, question) ||
+                other.question == question) &&
+            (identical(other.followUp, followUp) ||
+                other.followUp == followUp) &&
             (identical(other.isDual, isDual) || other.isDual == isDual) &&
             (identical(other.playersRequired, playersRequired) ||
                 other.playersRequired == playersRequired));
   }
 
+  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, cardType, pack,
-      const DeepCollectionEquality().hash(_question), isDual, playersRequired);
+  int get hashCode => Object.hash(runtimeType, cardType, gamePack, question,
+      followUp, isDual, playersRequired);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
   _$$GameCardDataImplCopyWith<_$GameCardDataImpl> get copyWith =>
       __$$GameCardDataImplCopyWithImpl<_$GameCardDataImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$GameCardDataImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _GameCardData implements GameCardData {
   const factory _GameCardData(
-      {required final String id,
-      required final CardType cardType,
-      required final GamePack pack,
-      required final Map<String, TextWeight> question,
+      {required final CardType cardType,
+      required final GamePack gamePack,
+      required final String question,
+      final String? followUp,
       required final bool isDual,
       required final int playersRequired}) = _$GameCardDataImpl;
 
-  @override
-  String get id;
+  factory _GameCardData.fromJson(Map<String, dynamic> json) =
+      _$GameCardDataImpl.fromJson;
+
   @override
   CardType get cardType;
   @override
-  GamePack get pack;
+  GamePack get gamePack;
   @override
-  Map<String, TextWeight> get question;
+  String get question;
+  @override
+  String? get followUp;
   @override
   bool get isDual;
   @override

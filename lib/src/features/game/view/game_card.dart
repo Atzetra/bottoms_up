@@ -9,7 +9,7 @@ class GameCard extends StatelessWidget {
     super.key,
   });
   final Color color;
-  final List<TextSpan> question;
+  final TextSpan question;
   final Widget title;
   final Widget icon;
 
@@ -31,9 +31,7 @@ class GameCard extends StatelessWidget {
                     title,
                     RichText(
                       textAlign: TextAlign.center,
-                      text: TextSpan(
-                        children: question,
-                      ),
+                      text: question,
                     ),
                   ],
                 ),
