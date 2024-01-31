@@ -57,7 +57,7 @@ class GameScreen extends HookConsumerWidget {
         ),
       ),
       error: (error, stackTrace) => Center(
-        child: Text(error.toString()),
+        child: Text(stackTrace.toString()),
       ),
       loading: () => const CircularProgressIndicator.adaptive(),
     ));

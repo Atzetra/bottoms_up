@@ -10,3 +10,8 @@ const kTestPlayers = [
   Player(name: 'Weer Iris', id: '7062a306-da48-4004-bdb6-59b8b526c128'),
   Player(name: 'Nog een Enzo', id: '9d4b1635-2d79-435f-a49e-cd9c7a2c6891'),
 ];
+
+const kEnzoEnIris = [
+  Player(name: 'Iris', id: '22b29e08-a016-4965-9e8b-940e8bdcfcee'),
+  Player(name: 'Enzo', id: '852b86fb-e2cc-4a70-a2a3-05d4f487a0f9'),
+];

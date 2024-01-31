@@ -9,7 +9,7 @@ part 'player_repository.g.dart';
 @riverpod
 class PlayerRepository extends _$PlayerRepository {
   @override
-  List<Player> build() => kTestPlayers;
+  List<Player> build() => kEnzoEnIris;
 
   void addPlayer(String name) {
     const uuid = Uuid();
